@@ -30,7 +30,6 @@ set splitbelow splitright
 filetype indent on      " load filetype-specific indent files
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
-
 " -----------------------------------------------------------------------------
 " Plugins
 " -----------------------------------------------------------------------------
@@ -145,7 +144,7 @@ nnoremap <leader>j :m .+1<CR>==
 let NERDTreeMinimalUI = 1
 let g:nerdtree_open = 0
 let g:NERDTreeWinSize=30
-nmap <leader>ff :NERDTreeFind<CR>
+nmap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
 " the ignore patterns are regular expression strings and seprated by comma
 let NERDTreeIgnore = ['\.pyc$', '^__pycache__$']
@@ -166,7 +165,9 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
 " -----------------------------------------------------------------------------
 " COC
 " -----------------------------------------------------------------------------
-let g:node_client_debug = 1
+
+" Disable Coc suggestions by default, use manual trigger.
+autocmd BufEnter * let b:coc_suggest_disable = 1
 let g:coc_global_extensions=[
             \'coc-solargraph',
             \'coc-pyright'
