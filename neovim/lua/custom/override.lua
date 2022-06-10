@@ -24,6 +24,6 @@ M.cmp = {
    completion = {
       autocomplete = false,
    },
-},
+}
 
 return M

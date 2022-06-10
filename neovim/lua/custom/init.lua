@@ -1,5 +1,4 @@
-require "custom.mappings"
-require "custom.autochad_cmds"
+require 'custom.autocmds'
 
 vim.opt.wrap = false
 vim.opt.scrolloff = 8

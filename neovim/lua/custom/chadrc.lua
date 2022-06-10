@@ -1,28 +1,31 @@
 local M = {}
 
-local plugin_conf = require "custom.plugins.configs"
-local userPlugins = require "custom.plugins"
+M.mappings = require "custom.mappings"
+
+local override = require "custom.override"
 
 M.plugins = {
-   status = {
+    status = {
       colorizer = true,
-   },
-   options = {
+    },
+
+    options = {
       statusline = {
-        style = "arrow",
+        separator_style = "arrow",
       },
+
       lspconfig = {
          setup_lspconf = "custom.plugins.lspconfig",
       },
     },
 
-   default_plugin_config_replace = {
-      nvim_treesitter = plugin_conf.treesitter,
-      nvim_tree = plugin_conf.nvimtree,
-      nvim_cmp = plugin_conf.cmp,
-   },
+    override = {
+      ["kyazdani42/nvim-tree.lua"] = override.nvimtree,
+      ["nvim-treesitter/nvim-treesitter"] = override.treesitter,
+      ["hrsh7th/nvim-cmp"] = override.cmp,
+    },
 
-   install = userPlugins,
+    user = require "custom.plugins",
 }
 
 M.ui = {
