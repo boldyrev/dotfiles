@@ -24,6 +24,9 @@ M.my = {
 
       -- Markdown preview
       ["<leader>m"] = { ":markdownpreview github<cr>", "markdown preview" },
+
+      -- Git diff current buffer
+      ["<leader>gd"] = { ":Gitsigns diffthis<cr>", "Git diff" },
    },
 
    v = {
