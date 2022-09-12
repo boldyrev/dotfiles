@@ -10,10 +10,6 @@ M.plugins = {
     },
 
     options = {
-      statusline = {
-        separator_style = "arrow",
-      },
-
       lspconfig = {
          setup_lspconf = "custom.plugins.lspconfig",
       },
@@ -23,13 +19,21 @@ M.plugins = {
       ["kyazdani42/nvim-tree.lua"] = override.nvimtree,
       ["nvim-treesitter/nvim-treesitter"] = override.treesitter,
       ["hrsh7th/nvim-cmp"] = override.cmp,
+      ["williamboman/mason.nvim"] = override.mason,
     },
 
     user = require "custom.plugins",
+
+    remove = {
+      "windwp/nvim-autopairs",
+    }
 }
 
 M.ui = {
-   theme = "gruvbox",
+  theme = "gruvbox",
+  statusline = {
+    separator_style = "arrow",
+  },
 }
 
 return M

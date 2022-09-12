@@ -1,16 +1,12 @@
-local M = {}
+local on_attach = require("plugins.configs.lspconfig").on_attach
+local capabilities = require("plugins.configs.lspconfig").capabilities
 
-M.setup_lsp = function()
-  require("nvim-lsp-installer").setup({
-    automatic_installation = true,
-    ui = {
-      icons = {
-        server_installed = "✓",
-        server_pending = "➜",
-        server_uninstalled = "✗"
-      }
-    }
-  })
+local lspconfig = require "lspconfig"
+local servers = { "pyright", "solargraph", "lua" }
+
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
 end
-
-return M

@@ -1,10 +1,10 @@
 return {
-  ["williamboman/nvim-lsp-installer"] = {
-    config = function()
-      require "custom.plugins.lspconfig"
-    end,
+  ["neovim/nvim-lspconfig"] = {
+      config = function()
+        require "plugins.configs.lspconfig"
+        require "custom.plugins.lspconfig"
+      end,
   },
-
   ["ur4ltz/surround.nvim"] = {
     config = function()
       require("surround").setup({ mappings_style = "sandwich" })
