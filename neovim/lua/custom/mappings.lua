@@ -2,7 +2,7 @@ local M = {}
 
 M.my = {
    i = {
-      ["jk"] = { "<ESC>", "Escape to normal mode" },
+      ["jk"] = { "<ESC>", "escape to normal mode" },
    },
 
    n = {
@@ -23,10 +23,32 @@ M.my = {
       ["<leader>j"] = { ":pu _<cr>:'[-1<cr>", "add blank line after current line" },
 
       -- Markdown preview
-      ["<leader>m"] = { ":markdownpreview github<cr>", "markdown preview" },
+      ["<leader>m"] = { ":MarkdownPreviewToggle<cr>", "markdown preview" },
 
       -- Git diff current buffer
-      ["<leader>gd"] = { ":Gitsigns diffthis<cr>", "Git diff" },
+      -- ["<leader>gd"] = { ":Gitsigns diffthis<cr>", "git diff" },
+
+      ["<leader>le"] = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>", "show full error message" },
+      ["<leader>lr"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", "rename" },
+      ["<leader>ls"] = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "signature help" },
+      ["<leader>lf"] = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "format document" },
+      ["<leader>ld"] = { "<cmd>lua vim.lsp.buf.hover()<cr>", "hover documentation" },
+
+      ["gd"] = { "<cmd>lua vim.lsp.buf.definition()<cr>", "go to definition" },
+      ["gD"] = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "go to declaration" },
+      ["gI"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "go to implementation" },
+      ["gt"] = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "go to type defenition" },
+
+      -- Debugging
+      ["<F5>"] = { "<cmd>lua require'dap'.continue()<cr>", "debug -> continue" },
+      ["<F9>"] = { "<cmd>lua require'dap'.run_last()<cr>", "debug -> run last" },
+      ["<F10>"] = { "<cmd>lua require'dap'.step_over()<cr>", "debug -> step over" },
+      ["<F11>"] = { "<cmd>lua require'dap'.step_into()<cr>", "debug -> step into" },
+      ["<F12>"] = { "<cmd>lua require'dap'.repl.open()<cr>", "debug -> repl open" },
+      ["<leader>b"] = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "debug -> toggle breakpoint" },
+      ["<leader>B"] = { "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", "debug -> breakpoint with condition" },
+      ["<leader>BB"] = { "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>", "debug -> breakpoint with message" },
+      ["<leader>dd"] = { "<cmd>lua require'dapui'.toggle()<cr>", "debug -> toggle debug UI" },
    },
 
    v = {

@@ -12,6 +12,7 @@ M.treesitter = {
       "markdown",
       "ruby",
       "python",
+      "go",
    },
 }
 
@@ -22,6 +23,7 @@ M.mason = {
     "lua-language-server",
     "pyright",
     "solargraph",
+    "gopls",
 
     -- linrers
     "pylint",
