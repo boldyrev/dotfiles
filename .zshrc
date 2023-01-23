@@ -59,3 +59,4 @@ alias szsh='source ~/.zshrc'
 alias h='history | grep'
 
 export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$HOME/scripts:$PATH"
