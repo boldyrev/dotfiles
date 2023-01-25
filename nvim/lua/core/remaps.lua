@@ -7,7 +7,9 @@ vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 -- Better escape
 vim.keymap.set("i", "jk", "<ESC>")
 
--- Begin / end off line on insert mode
+-- Begin / end off line
+vim.keymap.set("n", "E", "$", {noremap=false})
+vim.keymap.set("n", "B", "^", {noremap=false})
 vim.keymap.set("i", "<C-b>", "<ESC>^i")
 vim.keymap.set("i", "<C-e>", "<End>")
 
