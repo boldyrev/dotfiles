@@ -26,17 +26,27 @@ return require('packer').startup(function(use)
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
   }
+
   use {
 	  'nvim-telescope/telescope.nvim',
 	  tag = '0.1.0',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
+
   use {
     'numToStr/Comment.nvim',
     config = function()
         require('Comment').setup()
     end
   }
+
+  use({
+    'kylechui/nvim-surround',
+    tag = '*', -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+        require('nvim-surround').setup({})
+    end
+  })
 
   use('mbbill/undotree')
 
