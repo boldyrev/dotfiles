@@ -20,7 +20,7 @@ CASE_SENSITIVE="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting sudo asdf rails)
+plugins=(git gitfast zsh-autosuggestions zsh-syntax-highlighting sudo asdf rails)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -43,20 +43,12 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 
-alias gs='git status'
-alias gc='git commit'
-alias gd='git diff'
-alias ga='git add'
-alias gf='git fetch'
-alias gp='git push'
-alias gpl='git pull'
-alias gcl='git clone'
-
 alias vim='nvim'
 alias ezsh='nvim ~/.zshrc'
 alias szsh='source ~/.zshrc'
 
 alias h='history | grep'
 
-export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export PATH="$HOME/scripts:$PATH"
