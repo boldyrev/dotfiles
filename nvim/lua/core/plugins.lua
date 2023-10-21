@@ -22,6 +22,9 @@ return require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim'
   use 'theprimeagen/harpoon'
   use 'tpope/vim-obsession'
+  use 'slim-template/vim-slim'
+  use 'tpope/vim-rails'
+  use 'vim-ruby/vim-ruby'
 
   use {
     "williamboman/mason.nvim",
