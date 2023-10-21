@@ -43,7 +43,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 
-alias vim='nvim'
+alias v='nvim'
 alias ezsh='nvim ~/.zshrc'
 alias szsh='source ~/.zshrc'
 
