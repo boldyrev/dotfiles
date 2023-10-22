@@ -1,65 +1,91 @@
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-local packer_bootstrap = ensure_packer()
+require('lazy').setup({
+  'bluz71/vim-nightfly-colors',
+  'ellisonleao/gruvbox.nvim',
+  'lewis6991/gitsigns.nvim',
+  'mbbill/undotree',
+  'nvim-lualine/lualine.nvim',
+  'nvim-tree/nvim-tree.lua',
+  'nvim-tree/nvim-web-devicons',
+  'slim-template/vim-slim',
+  'theprimeagen/harpoon',
+  'tpope/vim-fugitive',
+  'tpope/vim-rails',
+  -- 'tpope/vim-obsession',
+  'vim-ruby/vim-ruby',
 
-return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-  use 'ellisonleao/gruvbox.nvim'
-  use 'nvim-tree/nvim-tree.lua'
-  use 'nvim-tree/nvim-web-devicons'
-  use 'nvim-lualine/lualine.nvim'
-  use 'nvim-treesitter/nvim-treesitter'
-  use 'bluz71/vim-nightfly-colors'
-  use 'lewis6991/gitsigns.nvim'
-  use 'theprimeagen/harpoon'
-  use 'tpope/vim-obsession'
-  use 'slim-template/vim-slim'
-  use 'tpope/vim-rails'
-  use 'vim-ruby/vim-ruby'
-
-  use {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
-  }
-
-  use {
-	  'nvim-telescope/telescope.nvim',
-	  tag = '0.1.0',
-	  requires = { {'nvim-lua/plenary.nvim'} }
-  }
-
-  use {
+  {
     'numToStr/Comment.nvim',
     config = function()
-        require('Comment').setup()
+      require('Comment').setup()
     end
-  }
+  },
 
-  use({
-    'kylechui/nvim-surround',
-    tag = '*', -- Use for stability; omit to use `main` branch for the latest features
-    config = function()
-        require('nvim-surround').setup({})
+  {
+    "kylechui/nvim-surround",
+     version = "*",
+     event = "VeryLazy",
+     config = function()
+       require("nvim-surround").setup({})
+     end
+  },
+
+  {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.4',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  },
+  {
+    'neovim/nvim-lspconfig',
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+  },
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ":TSUpdate",
+    config = function () 
+      local configs = require("nvim-treesitter.configs")
+
+      configs.setup({
+        ensure_installed = { "lua", "ruby", "python" },
+        sync_install = false,
+        highlight = { enable = true },
+        indent = { enable = true },  
+        textobjects = {
+          move = {
+            enable = true,
+            set_jumps = true, -- whether to set jumps in the jumplist
+            goto_next_start = {
+              [']m'] = '@function.outer',
+              [']]'] = '@class.outer',
+            },
+            goto_next_end = {
+              [']M'] = '@function.outer',
+              [']['] = '@class.outer',
+            },
+            goto_previous_start = {
+              ['[m'] = '@function.outer',
+              ['[['] = '@class.outer',
+            },
+            goto_previous_end = {
+              ['[M'] = '@function.outer',
+              ['[]'] = '@class.outer',
+            },
+          },
+        },
+      })
     end
-  })
-
-  use('mbbill/undotree')
-
-  use('tpope/vim-fugitive')
-
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-end)
+ }
+})
