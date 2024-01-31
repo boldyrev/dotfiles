@@ -43,12 +43,17 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 
-alias v='nvim'
+alias vim='nvim'
 alias ezsh='nvim ~/.zshrc'
 alias szsh='source ~/.zshrc'
+
+alias lg='lazygit'
 
 alias h='history | grep'
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export PATH="$HOME/scripts:$PATH"
+
+export PATH="$PATH:/usr/local/go/bin"
+export GOPATH="$HOME/projects/personal/go"
