@@ -88,6 +88,7 @@ require('lazy').setup({
       })
     end
   },
+
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -95,5 +96,12 @@ require('lazy').setup({
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
     }
-  }
+  },
+
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = {"mfussenegger/nvim-dap"}
+  },
+  "theHamsta/nvim-dap-virtual-text",
+  "leoluz/nvim-dap-go",
 })
