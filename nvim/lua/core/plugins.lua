@@ -104,6 +104,51 @@ require('lazy').setup({
     }
   },
 
+
+  {
+      'mfussenegger/nvim-dap',
+      config = function()
+          local dap = require 'dap'
+
+          -- Python
+          require 'dap-python'
+          table.insert(dap.configurations.python, {
+              type = 'python',
+              request = 'launch',
+              name = 'Launch file',
+              program = '${file}',
+              pythonPath = function()
+                  return 'python'
+              end,
+          })
+          table.insert(dap.configurations.python, {
+              type = 'python',
+              request = 'launch',
+              name = 'FastAPI',
+              program = function()
+                  return './main.py'
+              end,
+              pythonPath = function()
+                  return 'python'
+              end,
+          })
+          table.insert(dap.configurations.python, {
+              type = 'python',
+              request = 'launch',
+              name = 'FastAPI module',
+              module = 'uvicorn',
+              args = {
+                  'app.api.main:get_app',
+                  -- '--reload', -- doesn't work
+                  '--use-colors',
+              },
+              pythonPath = 'python',
+              console = 'integratedTerminal',
+          })
+      end,
+  },
+
+
   {
     "rcarriga/nvim-dap-ui",
     dependencies = {"mfussenegger/nvim-dap"}
@@ -123,6 +168,20 @@ require('lazy').setup({
     event = {"CmdlineEnter"},
     ft = {"go", 'gomod'},
     build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+  },
+
+  {
+    "mfussenegger/nvim-dap-python",
+    ft = "python",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "rcarriga/nvim-dap-ui",
+    },
+    config = function(_, opts)
+      local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+      require("dap-python").setup(path)
+      -- require("core.utils").load_mappings("dap_python")
+    end,
   },
 
   { -- Autocompletion
