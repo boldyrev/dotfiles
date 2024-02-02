@@ -114,6 +114,9 @@ local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 
 cmp.setup {
+  completion = {
+    autocomplete = false,
+  },
   view = {
   	entries = "native"
   },
