@@ -104,7 +104,6 @@ require('lazy').setup({
     }
   },
 
-
   {
       'mfussenegger/nvim-dap',
       config = function()
@@ -147,7 +146,6 @@ require('lazy').setup({
           })
       end,
   },
-
 
   {
     "rcarriga/nvim-dap-ui",
@@ -208,5 +206,10 @@ require('lazy').setup({
         -- refer to the configuration section below
       }
     end
+  },
+
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
   },
 })

@@ -1,8 +1,8 @@
--- Navigate vim panes better
-vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
-vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
-vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
-vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
+-- Navigate vim and tmux panes better
+vim.keymap.set("n", "C-h", "<cmd> TmuxNavigateLeft<CR>")
+vim.keymap.set("n", "C-l", "<cmd> TmuxNavigateRight<CR>")
+vim.keymap.set("n", "C-j", "<cmd> TmuxNavigateDown<CR>")
+vim.keymap.set("n", "C-k", "<cmd> TmuxNavigateUp<CR>")
 
 -- Better escape
 vim.keymap.set("i", "jk", "<ESC>")
@@ -35,6 +35,7 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
+-- Replace
 vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 
 -- Line bubbling
