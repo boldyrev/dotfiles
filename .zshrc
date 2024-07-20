@@ -57,3 +57,6 @@ export PATH="$HOME/scripts:$PATH"
 
 export PATH="$PATH:/usr/local/go/bin"
 export GOPATH="$HOME/projects/personal/go"
+
+export PATH="$PATH:/Users/alex/.config/v-analyzer/bin/"
+
