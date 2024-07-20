@@ -50,6 +50,10 @@ alias szsh='source ~/.zshrc'
 alias lg='lazygit'
 
 alias h='history | grep'
+alias cat='bat'
+
+# Git
+alias gcod='gco develop'
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
