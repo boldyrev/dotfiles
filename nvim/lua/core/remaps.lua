@@ -58,3 +58,6 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- Reselect pasted chunk
 vim.keymap.set('n', 'gp', '`[v`]', { noremap = true })
+
+-- Git
+vim.keymap.set("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>")
