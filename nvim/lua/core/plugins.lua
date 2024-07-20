@@ -21,9 +21,7 @@ require('lazy').setup({
   'nvim-tree/nvim-web-devicons',
   'slim-template/vim-slim',
   'theprimeagen/harpoon',
-  'tpope/vim-fugitive',
   'tpope/vim-rails',
-  -- 'tpope/vim-obsession',
   'vim-ruby/vim-ruby',
 
   {
