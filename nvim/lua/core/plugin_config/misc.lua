@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 require('go').setup()
 
 -- V
-vim.cmd([[au BufNewFile,BufRead *.v set filetype=vlang]])
+vim.cmd([[au BufNewFile,BufRead *.v set filetype=v]])
 
 -- auto-reload files when modified externally
 -- https://unix.stackexchange.com/a/383044
