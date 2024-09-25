@@ -1,12 +1,3 @@
--- Navigate vim and tmux panes better
-vim.keymap.set("n", "C-h", "<cmd> TmuxNavigateLeft<CR>")
-vim.keymap.set("n", "C-l", "<cmd> TmuxNavigateRight<CR>")
-vim.keymap.set("n", "C-j", "<cmd> TmuxNavigateDown<CR>")
-vim.keymap.set("n", "C-k", "<cmd> TmuxNavigateUp<CR>")
-
--- Better escape
-vim.keymap.set("i", "jk", "<ESC>")
-
 -- Begin / end off line
 vim.keymap.set("n", "E", "$", {noremap=false})
 vim.keymap.set("n", "B", "^", {noremap=false})
