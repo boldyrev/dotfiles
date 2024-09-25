@@ -51,6 +51,7 @@ alias lg='lazygit'
 
 alias h='history | grep'
 alias cat='bat'
+alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
 # Git
 alias gcod='gco develop'
@@ -67,3 +68,5 @@ export PATH="$PATH:/Users/alex/.config/v-analyzer/bin/"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+[[ "$PATH" == *"$HOME/bin:"* ]] || export PATH="$HOME/bin:$PATH"
+! { which werf | grep -qsE "^/Users/alex/.trdl/"; } && [[ -x "$HOME/bin/trdl" ]] && source $("$HOME/bin/trdl" use werf "2" "stable")
