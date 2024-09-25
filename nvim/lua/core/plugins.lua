@@ -63,7 +63,7 @@ require('lazy').setup({
       local configs = require("nvim-treesitter.configs")
 
       configs.setup({
-        ensure_installed = { "lua", "ruby", "python", "go", "v" },
+        ensure_installed = { "lua", "ruby", "python", "go", "v", "elixir", "eex", "heex" },
         sync_install = false,
         highlight = { enable = true },
         indent = { enable = true },
@@ -224,4 +224,6 @@ require('lazy').setup({
       "nvim-lua/plenary.nvim",
     },
   },
+  { "olimorris/onedarkpro.nvim", priority = 1000 },
+  { "Exafunction/codeium.vim" },
 })
