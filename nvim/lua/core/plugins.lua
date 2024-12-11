@@ -147,7 +147,7 @@ require('lazy').setup({
 
   {
     "rcarriga/nvim-dap-ui",
-    dependencies = {"mfussenegger/nvim-dap"}
+    dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"}
   },
   "theHamsta/nvim-dap-virtual-text",
   "leoluz/nvim-dap-go",
@@ -225,5 +225,18 @@ require('lazy').setup({
     },
   },
   { "olimorris/onedarkpro.nvim", priority = 1000 },
-  { "Exafunction/codeium.vim" },
+  {
+    "alexpasmantier/pymple.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      -- optional (nicer ui)
+      "stevearc/dressing.nvim",
+      "nvim-tree/nvim-web-devicons",
+    },
+    build = ":PympleBuild",
+    config = function()
+      require("pymple").setup()
+    end,
+  },
 })

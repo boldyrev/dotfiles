@@ -30,7 +30,3 @@ vim.opt.colorcolumn = "120"
 --Line numbers
 vim.wo.number = true
 vim.opt.relativenumber = true
-
---Folding
-vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-vim.opt.foldmethod = "expr"
