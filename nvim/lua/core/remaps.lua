@@ -42,9 +42,6 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 
--- Undo tree
-vim.keymap.set('n', '<leader>u', ":UndotreeToggle<CR>")
-
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- Reselect pasted chunk
@@ -53,4 +50,15 @@ vim.keymap.set('n', 'gp', '`[v`]', { noremap = true })
 -- Toggle git blame
 vim.keymap.set("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>")
 
-vim.keymap.set("n", "<leader>lg", ":LazyGit<cr>")
+vim.keymap.set("n", "<leader>lg", ":LazyGit<CR>")
+
+-- Window management
+vim.keymap.set("n", "<leader>v", "<C-w>v")
+vim.keymap.set("n", "<leader>h", "<C-w>s")
+vim.keymap.set("n", "<leader>se", "<C-w>=")
+
+-- Resize with arrows
+vim.keymap.set("n", "<Up>", ":resize -2<CR>")
+vim.keymap.set("n", "<Down>", ":resize +2<CR>")
+vim.keymap.set("n", "<Left>", ":vertical resize -2<CR>")
+vim.keymap.set("n", "<Right>", ":vertical resize +2<CR>")
