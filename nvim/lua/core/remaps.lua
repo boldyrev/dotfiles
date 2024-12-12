@@ -7,9 +7,6 @@ vim.keymap.set("i", "<C-e>", "<End>")
 -- No highlight
 vim.keymap.set("n", "<ESC>", "<cmd> noh <CR>")
 
--- Close current buffer and open next
-vim.keymap.set("n", "<leader>x", "<cmd>bnext<bar>bd # <CR>")
-
 -- Don't copy the replaced text after pasting in visual mode
 -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text#Alternative_mapping_for_paste
 vim.keymap.set("x", "p", "p:let @+=@0<CR>:let @'=@0<CR>", { silent = true })
@@ -48,7 +45,7 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set('n', 'gp', '`[v`]', { noremap = true })
 
 -- Toggle git blame
-vim.keymap.set("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>")
+-- vim.keymap.set("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>")
 
 vim.keymap.set("n", "<leader>lg", ":LazyGit<CR>")
 

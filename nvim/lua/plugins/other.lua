@@ -1,7 +1,6 @@
 return {
   "bluz71/vim-nightfly-colors",
   "ellisonleao/gruvbox.nvim",
-  "mbbill/undotree",
   "nvim-tree/nvim-tree.lua",
   "nvim-tree/nvim-web-devicons",
   "slim-template/vim-slim",

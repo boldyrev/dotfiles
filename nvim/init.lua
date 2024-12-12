@@ -15,6 +15,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  require "plugins.snacks",
   require "plugins.treesitter",
   require "plugins.lualine",
   require "plugins.gitsigns",
