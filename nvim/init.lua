@@ -19,6 +19,7 @@ require("lazy").setup({
   require "plugins.lualine",
   require "plugins.gitsigns",
   require "plugins.pymple",
+  require "plugins.harpoon",
   require "plugins.other"
 })
 
@@ -26,7 +27,6 @@ require "core.colorscheme"
 require "core.misc"
 
 require "plugins.nvim-tree"
-require "plugins.harpoon"
 require "plugins.lsp_config"
 require "plugins.noice"
 require "plugins.telescope"

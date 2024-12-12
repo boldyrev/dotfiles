@@ -5,7 +5,6 @@ return {
   "nvim-tree/nvim-tree.lua",
   "nvim-tree/nvim-web-devicons",
   "slim-template/vim-slim",
-  "theprimeagen/harpoon",
   "tpope/vim-rails",
   "vim-ruby/vim-ruby",
 

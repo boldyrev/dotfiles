@@ -1,11 +1,66 @@
-local mark = require("harpoon.mark")
-local ui = require("harpoon.ui")
+return {
+  "ThePrimeagen/harpoon",
+  enabled = true,
+  event = { "BufReadPost", "BufNewFile", "BufWritePre" },
+  branch = "harpoon2",
 
-vim.keymap.set("n", "<leader>a", mark.add_file)
-vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
+  keys = function()
+    local keys = {
+      {"<leader>1",
+        function()
+          require("harpoon"):list():select(1)
+        end, desc ="Harpoon buffer 1"
+      },
 
-vim.keymap.set("n", "<leader>1", function() ui.nav_file(1) end)
-vim.keymap.set("n", "<leader>2", function() ui.nav_file(2) end)
-vim.keymap.set("n", "<leader>3", function() ui.nav_file(3) end)
-vim.keymap.set("n", "<leader>4", function() ui.nav_file(4) end)
-vim.keymap.set("n", "<leader>5", function() ui.nav_file(5) end)
+      {"<leader>2",
+        function()
+          require("harpoon"):list():select(2)
+        end, desc ="Harpoon buffer 2"
+      },
+
+      {"<leader>3",
+        function()
+          require("harpoon"):list():select(3)
+        end, desc ="Harpoon buffer 3"
+      },
+
+      {"<leader>4",
+        function()
+          require("harpoon"):list():select(4)
+        end, desc ="Harpoon buffer 4"
+      },
+
+      {"<leader>5",
+        function()
+          require("harpoon"):list():select(5)
+        end, desc ="Harpoon buffer 5"
+      },
+
+      {"<C-e>",
+        function()
+          local harpoon = require("harpoon")
+         harpoon.ui:toggle_quick_menu(harpoon:list())
+        end, desc ="Harpoon Toggle Menu"
+      },
+
+      {"<leader>a",
+        function()
+          require("harpoon"):list():add()
+        end, desc ="Harpoon Tadd file"
+      },
+    }
+    return keys
+  end,
+
+  opts = {
+    settings = {
+      enter_on_sendcmd = false,
+      excluded_filetypes = { "harpoon", "alpha", "dashboard", "gitcommit" },
+      mark_branch = false,
+      save_on_change = true,
+      save_on_toggle = false,
+      sync_on_ui_close = false,
+      tmux_autoclose_windows = false,
+    },
+  },
+}
