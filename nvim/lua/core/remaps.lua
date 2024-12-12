@@ -48,6 +48,8 @@ vim.keymap.set('n', 'gp', '`[v`]', { noremap = true })
 -- vim.keymap.set("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>")
 
 vim.keymap.set("n", "<leader>lg", ":LazyGit<CR>")
+vim.keymap.set("n", "<leader>gf", ":LazyGitFilterCurrentFile<CR>")
+vim.keymap.set("n", "<leader>gl", ":LazyGitFilter<CR>")
 
 -- Window management
 vim.keymap.set("n", "<leader>v", "<C-w>v")

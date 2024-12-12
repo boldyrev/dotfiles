@@ -21,7 +21,15 @@ return {
         },
       },
     },
-    indent = { enabled = true },
+    indent = {
+      -- enabled = true,
+      scope = {
+        treesitter = {
+          -- blocks = true,
+          enabled = true,
+        },
+      },
+    },
     notifier = {
       enabled = true,
       timeout = 3000,
@@ -37,8 +45,8 @@ return {
     { "<leader>rf", function() Snacks.rename.rename_file() end, desc = "Rename File" },
     { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Git Blame Line" },
     -- { "<leader>lg", function() Snacks.lazygit() end, desc = "Lazygit" },
-    { "<leader>gf", function() Snacks.lazygit.log_file() end, desc = "Lazygit Current File History" },
-    { "<leader>gl", function() Snacks.lazygit.log() end, desc = "Lazygit Log (cwd)" },
+    -- { "<leader>gf", function() Snacks.lazygit.log_file() end, desc = "Lazygit Current File History" },
+    -- { "<leader>gl", function() Snacks.lazygit.log() end, desc = "Lazygit Log (cwd)" },
     { "<c-/>",      function() Snacks.terminal() end, desc = "Toggle Terminal" },
   },
   init = function()
