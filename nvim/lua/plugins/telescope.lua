@@ -15,7 +15,7 @@ return {
       {"<leader>fk", cmdT .. "keymaps<cr>", desc = "Telescope keymaps" },
 
       {"<leader>fb", cmdT .. "buffers<cr>", desc = "Telescope buffers" },
-      -- {"<leader>fd", cmdT .. "diagnostics<cr>", desc = "Telescope diagnostics" },
+      {"<leader>fd", cmdT .. "diagnostics<cr>", desc = "Telescope diagnostics" },
       {"<leader>ff", cmdT .. "find_files<cr>", desc = "Telescope Find files" },
       {"<leader>fw", cmdT .. "live_grep<cr>", desc = "Telescope Live Grep" },
       {"<leader>fW", cmdT .. "grep_string<cr>", desc = "Telescope Find Word" },
