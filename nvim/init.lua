@@ -30,5 +30,3 @@ require "core.misc"
 require "plugins.nvim-tree"
 require "plugins.lsp_config"
 require "plugins.noice"
-require "plugins.trouble"
-
