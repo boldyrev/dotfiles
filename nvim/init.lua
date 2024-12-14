@@ -22,10 +22,10 @@ require("lazy").setup({
   require "plugins.pymple",
   require "plugins.harpoon",
   require "plugins.telescope",
+  require "plugins.colorscheme",
   require "plugins.other"
 })
 
-require "core.colorscheme"
 require "core.misc"
 
 require "plugins.nvim-tree"
