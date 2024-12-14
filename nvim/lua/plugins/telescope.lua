@@ -19,7 +19,7 @@ return {
       {"<leader>ff", cmdT .. "find_files<cr>", desc = "Telescope Find files" },
       {"<leader>fw", cmdT .. "live_grep<cr>", desc = "Telescope Live Grep" },
       {"<leader>fW", cmdT .. "grep_string<cr>", desc = "Telescope Find Word" },
-      {"<leader>fu", cmdT .. "lsp_references show_line=false<cr>", desc = "Telescope LSP Refernces" },
+      -- {"<leader>fu", cmdT .. "lsp_references show_line=false<cr>", desc = "Telescope LSP Refernces" },
 
       {"<leader>gC", cmdT .. "git_commits<cr>", desc = "Telescope git commits" },
       -- {"<leader>gb", cmdT .. "git_branches<cr>", desc = "Telescope git branches" },
