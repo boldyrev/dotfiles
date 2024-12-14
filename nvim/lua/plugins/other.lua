@@ -1,6 +1,5 @@
 return {
   "bluz71/vim-nightfly-colors",
-  "nvim-tree/nvim-tree.lua",
   "nvim-tree/nvim-web-devicons",
   "slim-template/vim-slim",
   "tpope/vim-rails",
