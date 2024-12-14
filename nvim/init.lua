@@ -22,6 +22,7 @@ require("lazy").setup({
   require "plugins.harpoon",
   require "plugins.lsp",
   require "plugins.lualine",
+  require "plugins.noice",
   require "plugins.nvim-tree",
   require "plugins.pymple",
   require "plugins.snacks",
@@ -32,4 +33,3 @@ require("lazy").setup({
 })
 
 require "core.misc"
-require "plugins.noice"
