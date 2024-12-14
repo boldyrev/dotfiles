@@ -15,19 +15,22 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  require "plugins.snacks",
-  require "plugins.treesitter",
-  require "plugins.lualine",
-  require "plugins.gitsigns",
-  require "plugins.pymple",
-  require "plugins.harpoon",
-  require "plugins.telescope",
+  require "plugins.autocmp",
   require "plugins.colorscheme",
-  require "plugins.other"
+  require "plugins.colorscheme",
+  require "plugins.gitsigns",
+  require "plugins.harpoon",
+  require "plugins.lsp",
+  require "plugins.lualine",
+  require "plugins.pymple",
+  require "plugins.snacks",
+  require "plugins.telescope",
+  require "plugins.treesitter",
+
+  require "plugins.other",
 })
 
 require "core.misc"
 
 require "plugins.nvim-tree"
-require "plugins.lsp_config"
 require "plugins.noice"
