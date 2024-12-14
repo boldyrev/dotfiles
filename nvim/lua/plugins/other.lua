@@ -1,9 +1,12 @@
 return {
   "bluz71/vim-nightfly-colors",
   "nvim-tree/nvim-web-devicons",
-  "slim-template/vim-slim",
-  "tpope/vim-rails",
-  "vim-ruby/vim-ruby",
+  -- "slim-template/vim-slim",
+  -- "tpope/vim-rails",
+  -- "vim-ruby/vim-ruby",
+
+  { "christoomey/vim-tmux-navigator", lazy = false },
+  { "olimorris/onedarkpro.nvim", priority = 1000 },
 
   {
     "numToStr/Comment.nvim",
@@ -17,7 +20,7 @@ return {
     version = "*",
     event = "VeryLazy",
     config = function()
-      require("nvim-surround").setup({})
+      require("nvim-surround").setup()
     end
   },
 
@@ -26,13 +29,8 @@ return {
     dependencies = "nvim-lua/plenary.nvim",
     lazy = false,
     config = function()
-      require("todo-comments").setup { }
+      require("todo-comments").setup()
     end
-  },
-
-  {
-    "christoomey/vim-tmux-navigator",
-    lazy = false,
   },
 
   {
@@ -47,8 +45,6 @@ return {
     -- optional for floating window border decoration
     dependencies = "nvim-lua/plenary.nvim",
   },
-
-  { "olimorris/onedarkpro.nvim", priority = 1000 },
 
   {
     "folke/noice.nvim",
