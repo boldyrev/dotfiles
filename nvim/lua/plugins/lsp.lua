@@ -45,10 +45,6 @@ return {
         -- or a suggestion from your LSP for this to activate.
         map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
 
-        -- WARN: This is not Goto Definition, this is Goto Declaration.
-        --  For example, in C this would take you to the header.
-        map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-
         -- See `:help K` for why this keymap
         map('K', vim.lsp.buf.hover, 'Hover Documentation')
         map('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
