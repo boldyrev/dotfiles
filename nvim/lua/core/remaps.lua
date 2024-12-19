@@ -45,7 +45,7 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set('n', 'gp', '`[v`]', { noremap = true })
 
 -- Toggle git blame
--- vim.keymap.set("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>")
+vim.keymap.set("n", "<leader>gB", ":Gitsigns toggle_current_line_blame<CR>")
 
 vim.keymap.set("n", "<leader>lg", ":LazyGit<CR>")
 vim.keymap.set("n", "<leader>gf", ":LazyGitFilterCurrentFile<CR>")
