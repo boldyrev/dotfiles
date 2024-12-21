@@ -32,4 +32,5 @@ require("lazy").setup({
   require "plugins.other",
 })
 
+require "plugins.floaterminal"
 require "core.misc"
