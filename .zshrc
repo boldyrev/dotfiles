@@ -12,7 +12,7 @@ ZSH_THEME="robbyrussell"
 # Case-sensitive completion.
 CASE_SENSITIVE="true"
 
-plugins=(git gitfast zsh-autosuggestions zsh-syntax-highlighting sudo rails)
+plugins=(git gitfast zsh-autosuggestions zsh-syntax-highlighting sudo)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -39,8 +39,12 @@ export GOPATH="$HOME/projects/personal/go"
 
 export PATH="$PATH:/Users/alex/.config/v-analyzer/bin/"
 
+export PATH="$HOME/.config/emacs/bin:$PATH"
+
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 [[ "$PATH" == *"$HOME/bin:"* ]] || export PATH="$HOME/bin:$PATH"
 ! { which werf | grep -qsE "^/Users/alex/.trdl/"; } && [[ -x "$HOME/bin/trdl" ]] && source $("$HOME/bin/trdl" use werf "2" "stable")
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+unalias gg
