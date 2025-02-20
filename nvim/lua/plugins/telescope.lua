@@ -49,6 +49,7 @@ return {
     }
     opts.pickers = {
       colorscheme = { enable_preview = true },
+      find_files = { hidden = true },
     }
     opts.extensions = {
       file_browser = {
