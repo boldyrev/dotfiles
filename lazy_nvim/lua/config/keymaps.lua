@@ -5,3 +5,7 @@
 -- Copy to system buffer
 vim.api.nvim_set_keymap("n", "<leader>y", '"+y', { noremap = false })
 vim.api.nvim_set_keymap("v", "<leader>y", '"+y', { noremap = false })
+
+-- Add blank line
+vim.api.nvim_set_keymap("n", "<leader>k", ":pu! _<cr>:']+1<CR>", { noremap = false })
+vim.api.nvim_set_keymap("n", "<leader>j", ":pu _<cr>:'[-1<CR>", { noremap = false })
