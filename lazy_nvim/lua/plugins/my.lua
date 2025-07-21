@@ -1,3 +1,6 @@
+local enable_no_neck_pain = false
+local enable_oil = false
+
 return {
   -- add gruvbox
   {
@@ -16,6 +19,38 @@ return {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "gruvbox",
+    },
+  },
+
+  {
+    "folke/snacks.nvim",
+    opts = {
+      picker = {
+        ---@class snacks.picker.sources.Config
+        sources = {
+          files = {
+            hidden = true, -- show hidden files
+            ignored = true,
+          },
+          explorer = {
+            hidden = true,
+            ignored = true,
+          },
+        },
+        ---@class snacks.picker.formatters.Config
+        ---formatters = {
+        ---  file = {
+        ---    filename_first = true, -- display filename before the file path
+        ---  },
+        ---},
+      },
+      styles = {
+        -- LazyGit full screen
+        lazygit = {
+          width = 0,
+          height = 0,
+        },
+      },
     },
   },
 }
