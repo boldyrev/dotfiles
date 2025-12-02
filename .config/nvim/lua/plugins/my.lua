@@ -1,27 +1,35 @@
-local enable_no_neck_pain = false
-local enable_oil = false
-
 return {
-  -- add gruvbox
+  -- themes
+  -- {
+  --   "ellisonleao/gruvbox.nvim",
+  --   config = function()
+  --     require("gruvbox").setup({
+  --       bold = false,
+  --     })
+  --     vim.o.termguicolors = true
+  --     vim.o.background = "dark"
+  --     vim.cmd.colorscheme("gruvbox")
+  --   end,
+  -- },
   {
-    "ellisonleao/gruvbox.nvim",
+    "zenbones-theme/zenbones.nvim",
+    dependencies = "rktjmp/lush.nvim",
+    lazy = false,
+    priority = 1000,
     config = function()
-      require("gruvbox").setup({
-        bold = false,
-      })
-      vim.o.termguicolors = true
-      vim.o.background = "dark"
+      vim.cmd.colorscheme("kanagawabones")
+      vim.api.nvim_set_hl(0, "Comment", { bold = false })
+      vim.api.nvim_set_hl(0, "Function", { bold = false })
+      vim.api.nvim_set_hl(0, "Keyword", { bold = false })
+      vim.api.nvim_set_hl(0, "Normal", { bold = false })
+      vim.api.nvim_set_hl(0, "Statement", { bold = false })
+      vim.api.nvim_set_hl(0, "Special", { bold = false })
+      vim.api.nvim_set_hl(0, "Macro", { bold = false })
+      vim.api.nvim_set_hl(0, "@function", { bold = false })
+      vim.api.nvim_set_hl(0, "@keyword", { bold = false })
+      vim.api.nvim_set_hl(0, "@constant", { bold = false })
     end,
   },
-
-  -- Configure LazyVim to load gruvbox
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "gruvbox",
-    },
-  },
-
   {
     "folke/snacks.nvim",
     opts = {
