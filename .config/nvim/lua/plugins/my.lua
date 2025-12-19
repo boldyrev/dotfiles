@@ -12,22 +12,31 @@ return {
   --   end,
   -- },
   {
+    "webhooked/kanso.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme("kanso-ink")
+    end,
+  },
+  {
     "zenbones-theme/zenbones.nvim",
     dependencies = "rktjmp/lush.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme("kanagawabones")
-      vim.api.nvim_set_hl(0, "Comment", { bold = false })
-      vim.api.nvim_set_hl(0, "Function", { bold = false })
-      vim.api.nvim_set_hl(0, "Keyword", { bold = false })
-      vim.api.nvim_set_hl(0, "Normal", { bold = false })
-      vim.api.nvim_set_hl(0, "Statement", { bold = false })
-      vim.api.nvim_set_hl(0, "Special", { bold = false })
-      vim.api.nvim_set_hl(0, "Macro", { bold = false })
-      vim.api.nvim_set_hl(0, "@function", { bold = false })
-      vim.api.nvim_set_hl(0, "@keyword", { bold = false })
-      vim.api.nvim_set_hl(0, "@constant", { bold = false })
+      -- vim.cmd.colorscheme("kanagawabones")
+      -- vim.cmd.colorscheme("rosebones")
+      -- vim.api.nvim_set_hl(0, "Comment", { bold = false })
+      -- vim.api.nvim_set_hl(0, "Function", { bold = false })
+      -- vim.api.nvim_set_hl(0, "Keyword", { bold = false })
+      -- vim.api.nvim_set_hl(0, "Normal", { bold = false })
+      -- vim.api.nvim_set_hl(0, "Statement", { bold = false })
+      -- vim.api.nvim_set_hl(0, "Special", { bold = false })
+      -- vim.api.nvim_set_hl(0, "Macro", { bold = false })
+      -- vim.api.nvim_set_hl(0, "@function", { bold = false })
+      -- vim.api.nvim_set_hl(0, "@keyword", { bold = false })
+      -- vim.api.nvim_set_hl(0, "@constant", { bold = false })
     end,
   },
   {
