@@ -1,16 +1,4 @@
 return {
-  -- themes
-  -- {
-  --   "ellisonleao/gruvbox.nvim",
-  --   config = function()
-  --     require("gruvbox").setup({
-  --       bold = false,
-  --     })
-  --     vim.o.termguicolors = true
-  --     vim.o.background = "dark"
-  --     vim.cmd.colorscheme("gruvbox")
-  --   end,
-  -- },
   {
     "webhooked/kanso.nvim",
     lazy = false,
@@ -24,20 +12,7 @@ return {
     dependencies = "rktjmp/lush.nvim",
     lazy = false,
     priority = 1000,
-    config = function()
-      -- vim.cmd.colorscheme("kanagawabones")
-      -- vim.cmd.colorscheme("rosebones")
-      -- vim.api.nvim_set_hl(0, "Comment", { bold = false })
-      -- vim.api.nvim_set_hl(0, "Function", { bold = false })
-      -- vim.api.nvim_set_hl(0, "Keyword", { bold = false })
-      -- vim.api.nvim_set_hl(0, "Normal", { bold = false })
-      -- vim.api.nvim_set_hl(0, "Statement", { bold = false })
-      -- vim.api.nvim_set_hl(0, "Special", { bold = false })
-      -- vim.api.nvim_set_hl(0, "Macro", { bold = false })
-      -- vim.api.nvim_set_hl(0, "@function", { bold = false })
-      -- vim.api.nvim_set_hl(0, "@keyword", { bold = false })
-      -- vim.api.nvim_set_hl(0, "@constant", { bold = false })
-    end,
+    config = function() end,
   },
   {
     "folke/snacks.nvim",
@@ -54,12 +29,6 @@ return {
             ignored = true,
           },
         },
-        ---@class snacks.picker.formatters.Config
-        ---formatters = {
-        ---  file = {
-        ---    filename_first = true, -- display filename before the file path
-        ---  },
-        ---},
       },
       styles = {
         -- LazyGit full screen
