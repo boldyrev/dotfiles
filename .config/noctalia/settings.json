@@ -137,6 +137,7 @@
                     "hidePassive": false,
                     "id": "Tray",
                     "pinned": [
+                        "remmina-icon"
                     ]
                 },
                 {
@@ -433,10 +434,10 @@
         "firstDayOfWeek": 1,
         "hideWeatherCityName": false,
         "hideWeatherTimezone": false,
-        "name": "",
+        "name": "Ярославль",
         "showCalendarEvents": true,
         "showCalendarWeather": true,
-        "showWeekNumberInCalendar": false,
+        "showWeekNumberInCalendar": true,
         "use12hourFormat": true,
         "useFahrenheit": false,
         "weatherEnabled": true,
@@ -628,7 +629,7 @@
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/home/alex/Pictures/Wallpapers",
+        "directory": "/home/alex/walls",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [
