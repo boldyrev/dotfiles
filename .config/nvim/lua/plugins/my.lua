@@ -65,18 +65,11 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        gopls = {
+        elixirLS = {
           settings = {
-            gopls = {
-              hints = {
-                assignVariableTypes = false,
-                compositeLiteralFields = true,
-                compositeLiteralTypes = false,
-                constantValues = true,
-                functionTypeParameters = false,
-                parameterNames = false,
-                rangeVariableTypes = false,
-              },
+            elixirLS = {
+              dialyzerEnabled = true,
+              fetchDeps = false,
             },
           },
         },
